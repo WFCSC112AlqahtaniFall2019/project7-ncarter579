@@ -8,6 +8,9 @@
 #define LINKEDLIST_H
 #include "Data.h" //You need to create this
 
+using namespace std;
+
+
 class Node {
 public:
     Data data; // object at node

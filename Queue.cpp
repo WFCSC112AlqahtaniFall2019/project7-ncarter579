@@ -5,18 +5,18 @@
 #include "Queue.h"
 
 
-Queue::Queue() {}() {         //default constructor for Stack
+Queue::Queue() {         //default constructor for Stack
     head = nullptr;
 }
 
-void Queue::enqueue_tail(double stat){
+void Queue::enqueue_tail(Data stat){
     Node* iterator = head->next;
     Node* trail = head;
     while(iterator->next != nullptr){
         iterator = iterator->next;
         trail = trail->next;
     }
-    Node* temp = new Node(stat, nullptr); //create node
+    Node* temp = new Node(stat); //create node
     trail->next = temp;
     delete iterator;
 }

@@ -11,5 +11,5 @@
 
 class SortedLinkedList : public LinkedList{
 public:
-    void insertSorted(double stat);
+    void insertSorted(Data stat);
 };

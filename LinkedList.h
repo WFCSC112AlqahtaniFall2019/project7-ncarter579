@@ -16,9 +16,8 @@ public:
     Data data; // object at node
     Node *next; // pointer to next node
 
-    Node(double d, Node* n){
-        next = nullptr;
-        next = n;
+    Node(Data d){
+        data = d;
     }
 
 };

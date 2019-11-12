@@ -3,7 +3,6 @@
 //
 
 #include "LinkedList.h"
-
 #ifndef PROJECT7_STACK_H
 #define PROJECT7_STACK_H
 
@@ -12,7 +11,10 @@
 class Stack: public LinkedList{
 public:
     Stack();
-    void push_head(double stat);
+    void push_head(Data stat);
     bool pop_head();
+
+private:
+
 
 };

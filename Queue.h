@@ -12,7 +12,7 @@
 class Queue: public LinkedList{
 public:
     Queue();
-    void enqueue_tail(double stat);
+    void enqueue_tail(Data stat);
     bool dequeue_head();
 private:
     Node* tail;

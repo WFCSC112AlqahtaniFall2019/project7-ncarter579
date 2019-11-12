@@ -10,5 +10,6 @@
 #endif //PROJECT7_SORTEDLINKEDLIST_H
 
 class SortedLinkedList : public LinkedList{
-
+public:
+    void insertSorted(double stat);
 };

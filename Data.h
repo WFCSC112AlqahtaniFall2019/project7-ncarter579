@@ -7,5 +7,11 @@
 #endif //PROJECT7_DATA_H
 
 class Data{
-
+public:
+    void operator <<(Data list);       //output stream overload operator
+    bool operator >(Data compare);     //comparison overload operator
+    double pointsPerGame;              //four data points
+    double assistsPerGame;
+    double reboundsPerGame;
+    double  rating;
 };

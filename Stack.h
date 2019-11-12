@@ -10,5 +10,9 @@
 #endif //PROJECT7_STACK_H
 
 class Stack: public LinkedList{
+public:
+    Stack();
+    void push_head(double stat);
+    bool pop_head();
 
 };

@@ -10,5 +10,10 @@
 #endif //PROJECT7_QUEUE_H
 
 class Queue: public LinkedList{
-
+public:
+    Queue();
+    void enqueue_tail(double stat);
+    bool dequeue_head();
+private:
+    Node* tail;
 };

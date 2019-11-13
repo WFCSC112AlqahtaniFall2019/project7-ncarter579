@@ -21,7 +21,7 @@ void SortedLinkedList::insertSorted(Data stat) {
             curr = curr->next;  //moving curr and prev forward in the list
             prev = prev->next;
         } else {         //do this if the values need to be rearranged
-            if (head->data > temp->data) {      //if head's value is greater then curr's value
+            if (temp->data > head->data) {      //if head's value is greater then curr's value
                 prev->next = temp;   //sets prev's next equal to curr's next
                 temp->next = curr;
             } else {

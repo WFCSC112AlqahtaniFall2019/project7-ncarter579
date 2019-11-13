@@ -7,7 +7,7 @@
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 #include "Data.h" //You need to create this
-
+#include <ostream>
 using namespace std;
 
 

@@ -22,4 +22,20 @@ bool Data::operator>(Data compare) {    //used to compare the contents of a data
     else{
         return reboundsPerGame > reboundsPerGame;
     }
+    return false;
+}
+
+
+Data::Data() {
+    pointsPerGame = 0;
+    assistsPerGame = 0;
+    reboundsPerGame = 0;
+    rating = 0;
+}
+
+Data::Data(double point, double assist, double rebound, double rate) {
+    pointsPerGame = point;
+    assistsPerGame = assist;
+    reboundsPerGame = rebound;
+    rating = rate;
 }

@@ -14,4 +14,6 @@ public:
     double assistsPerGame;
     double reboundsPerGame;
     double  rating;
+    Data();
+    Data(double point, double assist, double rebound, double rate);
 };

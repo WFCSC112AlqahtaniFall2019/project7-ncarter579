@@ -30,6 +30,7 @@ bool Stack::pop_head() {
     }
     else{
         head->next = del->next;
+        //ostream
         delete del;
         return true;
     }

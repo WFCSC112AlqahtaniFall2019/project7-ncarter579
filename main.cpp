@@ -1,3 +1,6 @@
+//Nathan Carter
+
+
 #include <iostream>
 
 //#include "Data.h"
@@ -11,7 +14,7 @@
 int main() {
 
     LinkedList list;
-    Stack lis;
+    Stack *lis = new Stack;
 
     ifstream inputs;
     ofstream stacked;
@@ -19,12 +22,15 @@ int main() {
     ofstream sorted;
 
     inputs.open ("all_seasons.csv");
-    stacked.open ("stacked.txt");
+    stacked.open ("../stacked.txt");
     queued.open ("queued.txt");
     sorted.open ("sorted.txt");
 
+
+    stacked << "HelloWorld";
+    stacked.close();
     if (!inputs.is_open()){
-        //imputs isn't open
+        cout << "imputs isn't open" << endl;
     }
     if (!stacked.is_open()){
         //stacked isn't open
@@ -35,8 +41,8 @@ int main() {
     if (!sorted.is_open()){
         //sorted isn't open
     }
-    
-        Data object;
+
+
         while(inputs.good()){
             string points;
             getline(inputs, points, ',');
@@ -50,9 +56,17 @@ int main() {
             string rating;
             getline(inputs, rating, ',');
 
-            Data* object = new Data(stod(points), stod(rebounds), stod(assists), stod(rating));
+            Data object =  Data(stod(points), stod(rebounds), stod(assists), stod(rating));
+            lis->push_head(object);
         }
 
+
+    while(lis->pop_head()){
+        lis->print(stacked);
+        if(!lis->pop_head()){
+            break;
+        }
+    }
 
 
 
@@ -63,5 +77,5 @@ int main() {
     stacked.close ();
     queued.close ();
     sorted.close ();
-        return 0;
+    return 0;
 }

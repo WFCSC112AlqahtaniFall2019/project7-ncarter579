@@ -2,8 +2,7 @@
 
 
 #include <iostream>
-
-//#include "Data.h"
+#include "Data.h"
 #include "LinkedList.h"
 #include "Queue.h"
 #include "SortedLinkedList.h"
@@ -12,9 +11,9 @@
 #include <fstream>
 
 int main() {
-
-    LinkedList list;
-    Stack *lis = new Stack;
+    Stack lis;
+    Queue queue;
+    SortedLinkedList sortedlinkedlist;
 
     ifstream inputs;
     ofstream stacked;
@@ -22,56 +21,56 @@ int main() {
     ofstream sorted;
 
     inputs.open ("all_seasons.csv");
-    stacked.open ("../stacked.txt");
+    stacked.open ("stacked.txt");
     queued.open ("queued.txt");
     sorted.open ("sorted.txt");
 
-
-    stacked << "HelloWorld";
-    stacked.close();
     if (!inputs.is_open()){
-        cout << "imputs isn't open" << endl;
+        cout << "inputs isn't open" << endl;
+        return -1;
     }
     if (!stacked.is_open()){
-        //stacked isn't open
+        cout << "stacked isn't open" << endl;
+        return -1;
     }
     if (!queued.is_open()){
-        //queued isn't open
+        cout << "queued isn't open" << endl;
+        return -1;
     }
     if (!sorted.is_open()){
-        //sorted isn't open
+        cout << "sorted isn't open" << endl;
+        return -1;
     }
 
-
-        while(inputs.good()){
-            string points;
+    string points;
+    string rebounds;
+    string assists;
+    string rating;
+    
+        while(!inputs.eof()){
             getline(inputs, points, ',');
-
-            string rebounds;
             getline(inputs, rebounds, ',');
-
-            string assists;
             getline(inputs, assists, ',');
+            getline(inputs, rating);
 
-            string rating;
-            getline(inputs, rating, ',');
+            Data object (stod(points), stod(rebounds), stod(assists), stod(rating));
 
-            Data object =  Data(stod(points), stod(rebounds), stod(assists), stod(rating));
-            lis->push_head(object);
+            lis.push_head(object);
+            queue.enqueue_tail(object);
+            sortedlinkedlist.insertSorted(object);
         }
 
+    lis.print(stacked);
+    queue.print(queued);
+    sortedlinkedlist.print(sorted);
 
-    while(lis->pop_head()){
-        lis->print(stacked);
-        if(!lis->pop_head()){
-            break;
-        }
+    while(lis.pop_head()){
+        //Popping and Printing
     }
 
-
-
-
-
+    while(queue.dequeue_head()){
+        //Dequeue and print
+    }
 
     inputs.close ();
     stacked.close ();

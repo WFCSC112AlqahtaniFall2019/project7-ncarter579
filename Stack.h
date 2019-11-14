@@ -14,6 +14,7 @@ public:
     void push_head(Data stat);
     bool pop_head();
 
+
 private:
 
 

@@ -6,18 +6,20 @@
 
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
-#include "Data.h" //You need to create this
+#include "Data.h"
 #include <ostream>
 using namespace std;
 
 
 class Node {
 public:
-    Data data; // object at node
+    Data dat; // object at node
     Node *next; // pointer to next node
-
+    Node(){
+        next = nullptr;
+    }
     Node(Data d){
-        data = d;
+        dat = d;
     }
 
 };

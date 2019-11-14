@@ -4,16 +4,20 @@
 #ifndef PROJECT7_DATA_H
 #define PROJECT7_DATA_H
 
-#endif //PROJECT7_DATA_H
-
+#include <iostream>
+using namespace std;
 class Data{
 public:
-    void operator <<(Data list);       //output stream overload operator
-    bool operator >(Data compare);     //comparison overload operator
+    friend const ostream& operator<<( ostream& os, Data d); //output stream overload operator
+    bool operator>(Data& rhs);
+    Data(double point, double rebound, double assist, double rate);
+    Data(){};
+private:
     double pointsPerGame;              //four data points
     double assistsPerGame;
     double reboundsPerGame;
     double  rating;
-    Data();
-    Data(double point, double rebound, double assist, double rate);
 };
+
+
+#endif //PROJECT7_DATA_H

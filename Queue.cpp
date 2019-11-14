@@ -7,28 +7,29 @@
 
 Queue::Queue() {         //default constructor for Stack
     head = nullptr;
+    tail = nullptr;
 }
 
 void Queue::enqueue_tail(Data stat){
-    Node* iterator = head->next;
-    Node* trail = head;
-    while(iterator->next != nullptr){
-        iterator = iterator->next;
-        trail = trail->next;
+    Node * node = new Node(stat);
+    if (head == nullptr){
+        head= node ;
+        tail = node;
     }
-    Node* temp = new Node(stat); //create node
-    trail->next = temp;
-    delete iterator;
+    else{
+        tail->next=node;
+        tail=node;
+    }
 }
 
 bool Queue::dequeue_head() {
-    Node* del = head->next;
-    if(head->next = nullptr){
+    Node* del = head;
+    if(head->next = tail){
         return false;
     }
     else{
-        head->next = del->next;
-        delete del;
+        head = head->next;
+        delete (del);
         return true;
     }
 }

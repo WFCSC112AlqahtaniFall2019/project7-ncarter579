@@ -9,9 +9,9 @@ using namespace std;
 class Data{
 public:
     friend const ostream& operator<<( ostream& os, Data d); //output stream overload operator
-    bool operator>(Data& rhs);
-    Data(double point, double rebound, double assist, double rate);
-    Data(){};
+    bool operator>(Data& rhs);     //overload operator
+    Data(double point, double rebound, double assist, double rate);     //constructor
+    Data(){};   //default constructor
 private:
     double pointsPerGame;              //four data points
     double assistsPerGame;

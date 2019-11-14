@@ -17,19 +17,18 @@ void SortedLinkedList::insertSorted(Data stat) {
         head = temp;
     }
     else{
-        if (head->dat > temp->dat) {
+        if (head->dat > temp->dat) {        //checking to see if you need to insert at your head
             temp->next = head;
             head = temp;
         }
         else {
             curr = head;
-            while (curr != nullptr && temp->dat > curr->dat ) {
+            while (curr != nullptr && temp->dat > curr->dat ) {    //traversing the list until you need to insert your node
                 prev=curr;
                 curr = curr->next;
             }
-            prev->next=temp;
+            prev->next=temp;         //iterating variables
             temp->next=curr;
-            //  iterator->next = newNode;
         }
     }
 }

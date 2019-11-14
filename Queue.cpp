@@ -5,12 +5,12 @@
 #include "Queue.h"
 
 
-Queue::Queue() {         //default constructor for Stack
+Queue::Queue() {         //default constructor for queue
     head = nullptr;
     tail = nullptr;
 }
 
-void Queue::enqueue_tail(Data stat){
+void Queue::enqueue_tail(Data stat){     //puts Nodes into the queue
     Node * node = new Node(stat);
     if (head == nullptr){
         head= node ;
@@ -22,7 +22,7 @@ void Queue::enqueue_tail(Data stat){
     }
 }
 
-bool Queue::dequeue_head() {
+bool Queue::dequeue_head() {     //takes everything out of the queue
     Node* del = head;
     if(head->next = tail){
         return false;

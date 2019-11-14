@@ -42,16 +42,20 @@ int main() {
         return -1;
     }
 
+
+
     string points;
     string rebounds;
     string assists;
     string rating;
-    
-        while(!inputs.eof()){
+        for(int i = 0; i < 10101; i++){
+        //while(!inputs.eof()){
             getline(inputs, points, ',');
             getline(inputs, rebounds, ',');
             getline(inputs, assists, ',');
             getline(inputs, rating);
+
+            cout << points << " " << rebounds << " " << assists << "  " << rating << endl;
 
             Data object (stod(points), stod(rebounds), stod(assists), stod(rating));
 

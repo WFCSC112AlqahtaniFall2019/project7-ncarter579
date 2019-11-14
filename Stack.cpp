@@ -11,7 +11,7 @@ Stack::Stack() {         //default constructor for Stack
     head = nullptr;
 }
 
-void Stack::push_head(Data stat){
+void Stack::push_head(const Data &stat){
     Node* node = new Node(stat);
     node->next = head;
     head = node;

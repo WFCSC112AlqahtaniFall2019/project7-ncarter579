@@ -11,7 +11,7 @@
 class Stack: public LinkedList{
 public:
     Stack();
-    void push_head(Data stat);
+    void push_head(const Data &stat);
     bool pop_head();
 
 

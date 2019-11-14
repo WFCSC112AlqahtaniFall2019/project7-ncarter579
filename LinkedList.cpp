@@ -40,8 +40,8 @@ void LinkedList::print(ostream &os) {
     // start at the head of the list
     Node *curr = head;
     while (curr != nullptr) {
-        Data* temp = &curr->dat;
-        os << temp << endl; // use overloaded output operator to print
+        Data temp = curr->dat;
+        os << temp ; // use overloaded output operator to print
         curr = curr->next; // go to next node in list
     }
 }
